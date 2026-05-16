@@ -20,8 +20,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Clean build directory
-        run: rm -rf build/cmake
+      # - name: Clean build directory
+      #   run: rm -rf build/cmake
 
       - name: Setup CMake
         uses: jwlawson/actions-setup-cmake@v1
