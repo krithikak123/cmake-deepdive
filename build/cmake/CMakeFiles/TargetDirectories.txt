@@ -1,0 +1,3 @@
+C:/Users/Krithika/cpp-cmake-gradle-sample/build/cmake/CMakeFiles/cpp_sample.dir
+C:/Users/Krithika/cpp-cmake-gradle-sample/build/cmake/CMakeFiles/edit_cache.dir
+C:/Users/Krithika/cpp-cmake-gradle-sample/build/cmake/CMakeFiles/rebuild_cache.dir

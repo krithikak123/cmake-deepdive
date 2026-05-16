@@ -1,0 +1,32 @@
+plugins {
+    id 'base'
+}
+
+ext {
+    isWindows = System.getProperty('os.name').toLowerCase().contains('windows')
+    cmakeBuildDir = file("$buildDir/cmake")
+}
+
+task cmakeConfigure(type: Exec) {
+    doFirst {
+        cmakeBuildDir.mkdirs()
+    }
+    workingDir cmakeBuildDir
+    commandLine 'cmake', '-S', projectDir.toString(), '-B', cmakeBuildDir.toString()
+}
+
+task cmakeBuild(type: Exec) {
+    dependsOn cmakeConfigure
+    workingDir cmakeBuildDir
+    if (isWindows) {
+        commandLine 'cmake', '--build', '.', '--config', 'Release'
+    } else {
+        commandLine 'cmake', '--build', '.', '--config', 'Release'
+    }
+}
+
+build.dependsOn cmakeBuild
+
+clean.doLast {
+    delete cmakeBuildDir
+}
